@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="stylesheet.css">
+    <meta charset="utf-8">
+    <title>ようこそ！ニジガク幼稚園</title>
+  </head>
+  <body>
+    <h1 class="title">ようこそ！ニジガク幼稚園　サンプル</h1>
+
+  <ul class="slides">
+	<li><a href="file:///Users/kuon/Desktop/html_kou/1-0.jpeg"><img src="file:///Users/kuon/Desktop/html_kou/1-0.jpeg" /></a><p></p></li>
+	<li><a href="file:///Users/kuon/Desktop/html_kou/1-1.jpeg"><img src="file:///Users/kuon/Desktop/html_kou/1-1.jpeg" /></a><p></p></li>
+	<li><a href="file:///Users/kuon/Desktop/html_kou/1-2.jpeg"><img src="file:///Users/kuon/Desktop/html_kou/1-2.jpeg" /></a><p></p></li>
+	<li><a href="file:///Users/kuon/Desktop/html_kou/1-3.jpeg"><img src="file:///Users/kuon/Desktop/html_kou/1-3.jpeg" /></a><p></p></li>
+  <li><a href="file:///Users/kuon/Desktop/html_kou/1-4.jpeg"><img src="file:///Users/kuon/Desktop/html_kou/1-4.jpeg" /></a><p></p></li>
+  <li><a href="file:///Users/kuon/Desktop/html_kou/1-5.jpeg"><img src="file:///Users/kuon/Desktop/html_kou/1-5.jpeg" /></a><p></p></li>
+  <li><a href="file:///Users/kuon/Desktop/html_kou/1-6.jpeg"><img src="file:///Users/kuon/Desktop/html_kou/1-6.jpeg" /></a><p></p></li>
+</ul>
+
+<script>
+//スライド用のliタグを全て取得
+var slides = document.getElementsByClassName('slides')[0].getElementsByTagName('li');
+
+//スライド表示用の関数を呼び出す（引数はスライドの切り替え時間）
+viewSlide(5000);
+
+function viewSlide(msec, slide_no = -1)
+{
+	//現在のスライドを消す
+	if (slides[slide_no]) {
+		slides[slide_no].style.display = 'none';
+	}
+	//スライド番号をカウントアップ
+	slide_no++;
+	if (slides[slide_no]) {
+		//次のスライドを表示
+		slides[slide_no].style.display = 'block';
+	} else {
+		//次のスライドがなければ最初のスライドを表示
+		slides[0].style.display = 'block';
+		slide_no = 0;
+	}
+	setTimeout(function(){viewSlide(msec, slide_no);}, msec);
+}
+</script>
+  </body>
+
+</html>
