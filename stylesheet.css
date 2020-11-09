@@ -1,0 +1,21 @@
+.title{
+  color: #02ccba;
+}
+
+<style>
+ul.slides li {
+	display:none;
+	position:relative;
+	list-style:none;
+}
+ul.slides li img {
+	width:600px;
+}
+ul.slides li p {
+	position:absolute;
+	top:1em;
+	left:1em;
+	color:black;
+	font-size:1.2em;
+}
+</style>
